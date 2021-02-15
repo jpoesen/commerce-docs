@@ -117,6 +117,7 @@ class OrderSpecificCustomer extends ConditionBase {
   public function evaluate(EntityInterface $entity) {
     $this->assertEntity($entity);
     /** @var \Drupal\commerce_order\Entity\OrderInterface $order */
+    $order = $entity;
     if ($customer_id = $order->getCustomerId()) {
     	// Condition is TRUE only for customer with ID #2.
     	return ($customer_id == 2);
